@@ -12,3 +12,7 @@ Route::get('/', function () {
 });
 
 Route::post('/register', [UseController::class, 'register']);
+
+Route::post('/logout', [UseController::class, 'logout']);
+
+Route::post('/login', [UseController::class, 'login']);

@@ -22,6 +22,23 @@
                 <button>Save Post</button>
             </form>
         </div>
+        <div style="border: 3px solid black;">
+            <h2>All Posts</h2>
+            @foreach($posts as $post)
+            <div style="background-color: gray; padding:10 px; margin: 10px; ">
+            <h3>{{$post['title']}} by {{$post->user->name}}</h3>
+                {{$post['body']}}
+                <p><a href="/edit-post/{{$post->id}}">Edit</a></p>
+                <form action="/delete-post/{{$post->id}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button>Delete</button>
+                </form>    
+            </div>
+                
+            @endforeach
+        </div>
+
 
     @else
     <div style="border: 3px solid black">

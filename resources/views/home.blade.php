@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Homme</title>
+    @vite('resources/css/app.css')
+    <title>Home</title>
 </head>
-<body>
+<body >
     @auth
         <p>Congrats you're log in</p>
         <form action="/logout" method="POST">
         @csrf
-            <button>Log out</button>
+            <button class="bg-blue-950">Log out</button>
         </form>
         <div style="border: 3px solid black;">
             <h2>Create a New Post</h2>

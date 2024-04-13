@@ -8,7 +8,9 @@
     <title>Home</title>
 </head>
 <body >
+   
     @auth
+    <x-layout>
     <div class="mb-10 items-center w-full">
     <p class="text-center text-blue-500 text-xs mb-4 font-semibold">
         Congrats, you're logged in
@@ -47,9 +49,11 @@
         @endforeach
     </div>
 </div>
+</x-layout>  
 
 
     @else
+    <x-layout>
     <div class="max-w-md mx-auto p-4 bg-white rounded-lg shadow-md mt-11">
         <h2 class="text-2xl font-semibold mb-4">Register</h2>
         <form action="/register" method="POST">
@@ -62,7 +66,7 @@
             </button>
         </form>
     </div>
-    
+
     <div class="mt-8 max-w-md mx-auto p-4 bg-white rounded-lg shadow-md">
         <h2 class="text-2xl font-semibold mb-4">Login</h2>
         <form action="/login" method="POST">
@@ -74,7 +78,9 @@
             </button>
         </form>
     </div>
-    
+   
+    </x-layout>
+
     @endauth
 
    
